@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css" />
+  </head>
+  <body>
+    <div class="maincontainer">
+      <div class="calculator">
+        <form name="calc">
+          <div class="display">
+            <input type="text" name="display" readonly>
+          </div>
+          <div>
+            <input type="button" value="AC" onclick="document.calc.display.value = ''">
+            <input type="button" value="DEL" onclick="document.calc.display.value = document.calc.display.value.slice(0, -1)">
+            <input type="button" value="%" onclick="document.calc.display.value += '%'">
+            <input type="button" value="/" onclick="document.calc.display.value += '/'">
+          </div>
+          <div>
+            <input type="button" value="7" onclick="document.calc.display.value += '7'">
+            <input type="button" value="8" onclick="document.calc.display.value += '8'">
+            <input type="button" value="9" onclick="document.calc.display.value += '9'">
+            <input type="button" value="*" onclick="document.calc.display.value += '*'">
+          </div>
+          <div>
+            <input type="button" value="4" onclick="document.calc.display.value += '4'">
+            <input type="button" value="5" onclick="document.calc.display.value += '5'">
+            <input type="button" value="6" onclick="document.calc.display.value += '6'">
+            <input type="button" value="-" onclick="document.calc.display.value += '-'">
+          </div>
+          <div>
+            <input type="button" value="1" onclick="document.calc.display.value += '1'">
+            <input type="button" value="2" onclick="document.calc.display.value += '2'">
+            <input type="button" value="3" onclick="document.calc.display.value += '3'">
+            <input type="button" value="+" onclick="document.calc.display.value += '+'">
+          </div>
+          <div>
+            <input type="button" value="00" onclick="document.calc.display.value += '00'">
+            <input type="button" value="0" onclick="document.calc.display.value += '0'">
+            <input type="button" value="=" class="equal" onclick="evaluateCalc()">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function evaluateCalc() {
+      try {
+        // Evaluate the expression using eval
+        document.calc.display.value = eval(document.calc.display.value);
+      } catch (e) {
+        // If there is an error, display 'Error'
+        document.calc.display.value= 'Error';
+      }
+    }
+    </script>
+  </body>
+</html>
