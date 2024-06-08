@@ -38,6 +38,8 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px 0;
+    border-radius: 10px;
+    background:#6b7482;
   }
   
   form .display input {
